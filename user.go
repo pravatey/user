@@ -5,6 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/mholt/binding"
 )
 
@@ -24,6 +26,8 @@ func (us *UsersHandler) GET(c *gin.Context) {
 }
 
 type CreateUserForm struct {
+	gorm.Model
+	UserId   string
 	Account  string
 	Passwd   string
 	Email    string
@@ -49,6 +53,7 @@ func (cf *CreateUserForm) FieldMap(req *http.Request) binding.FieldMap {
 
 //add user
 func (us *UsersHandler) POST(c *gin.Context) {
+	db := GetDB()
 	createUserForm := new(CreateUserForm)
 	errs := binding.Bind(c.Request, createUserForm)
 
