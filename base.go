@@ -22,7 +22,7 @@ func GetRouter() *gin.Engine {
 
 func GetDB() *gorm.DB {
 	if db == nil {
-		db, err := gorm.Open("postgres", "user=gorm dbname=gorm sslmode=disable")
+		db, err := gorm.Open("postgres", "user=go dbname=gorm sslmode=disable")
 		if err != nil {
 			fmt.Println("Open data base failed")
 			return
