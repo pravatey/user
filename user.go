@@ -25,7 +25,7 @@ func (us *UsersHandler) GET(c *gin.Context) {
 	})
 }
 
-type CreateUserForm struct {
+type CreateUserModel struct {
 	gorm.Model
 	UserId   string
 	Account  string
@@ -35,7 +35,7 @@ type CreateUserForm struct {
 	Portrait string
 }
 
-func (cf *CreateUserForm) FieldMap(req *http.Request) binding.FieldMap {
+func (cf *CreateUserModel) FieldMap(req *http.Request) binding.FieldMap {
 	return binding.FieldMap{
 		&cf.Account: binding.Field{
 			Form:     "account",
@@ -54,7 +54,7 @@ func (cf *CreateUserForm) FieldMap(req *http.Request) binding.FieldMap {
 //add user
 func (us *UsersHandler) POST(c *gin.Context) {
 	db := GetDB()
-	createUserForm := new(CreateUserForm)
+	createUserForm := new(CreateUserModel)
 	errs := binding.Bind(c.Request, createUserForm)
 
 	if errs.Handle(c.Writer) {
