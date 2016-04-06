@@ -5,7 +5,7 @@ from email.header import Header
 
 mail_host="smtp.live.com"
 mail_user="fhtjob@hotmail.com"
-mail_pass="f975494768"
+mail_pass="f*********"
 
 sender = 'fhtjob@hotmail.com'
 receivers = ['474785153@qq.com', 'fhtjob@hotmail.com', 'haitao.fang@zasystem.com'] 
@@ -32,7 +32,7 @@ fromaddr = 'lamelegdog@gmail.com'
 toaddrs  = 'fhtjob@hotmail.com'
 msg = 'Why,Oh why!'
 username = 'lamelegdog@gmail.com'
-password = 'f975494768'
+password = 'f*********'
 server = smtplib.SMTP('smtp.gmail.com:587')
 server.ehlo()
 server.starttls()
