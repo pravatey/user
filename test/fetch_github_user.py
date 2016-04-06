@@ -7,7 +7,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-URL = "https://fanux:f975494768@api.github.com"
+URL = "https://fanux:f******@api.github.com"
 re_session = requests.session()
 
 engine = create_engine('postgresql://postgres:111111@localhost/orm_test')
@@ -72,7 +72,7 @@ def send_email(to_email):
 	msg['To'] = Header('Dear friend', 'utf-8')
 	msg['Subject'] = Header('A good websocket framework', 'utf-8')
 	username = 'lamelegdog@gmail.com'
-	password = 'f975494768'
+	password = 'f*******'
 	server = smtplib.SMTP('smtp.gmail.com:587')
 	server.ehlo()
 	server.starttls()
