@@ -37,9 +37,8 @@ def add_user(user):
 def get_user_info_from_repos_stargazers(repos_fullname):
 	u_list = []
 	users = []
-	page = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
 	headers = {"Accept":"application/vnd.github.v3+json"}
-	for p in page:
+	for p in range(20):
 		response = re_session.get(URL + "/repos/" + repos_fullname + "/stargazers?page=%d&per_page=100" % p, headers=headers)
 		users = users + json.loads(response.text)
 
