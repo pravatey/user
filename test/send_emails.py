@@ -7,7 +7,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-URL = "https://pravatey:f975494768@api.github.com"
+URL = "https://pravatey:*********8@api.github.com"
 re_session = requests.session()
 
 engine = create_engine('postgresql://postgres:111111@localhost/orm_test')
