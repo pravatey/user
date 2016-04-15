@@ -51,6 +51,7 @@ def get_user_info_from_repos_stargazers(repos_fullname):
 	
 	return u_list
 
+# we have a simple domo https://github.com/fanux/lhttp-web-demo
 MSG = """Dear friend,
 	I am steven, a coder in China, I am honoured to introduce a websocket framwork for you. 
 https://github.com/fanux/lhttp , you can build a IM application very quickly with lhttp. 
